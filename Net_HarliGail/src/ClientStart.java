@@ -12,6 +12,7 @@ public class ClientStart extends JFrame implements ActionListener{
 	Join join = new Join();				// 회원가입창
 	MakeRoom makeR = new MakeRoom();	// 방만들기창
 	
+	int a;
 	public ClientStart()
 	{
 		setLayout(card);				// BorderLayout
