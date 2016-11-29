@@ -16,11 +16,14 @@ public class ClientStart extends JFrame implements ActionListener, Runnable{
 	WaitRoom waitR = new WaitRoom();	// 대기실창
 	GameWindow gameR = new GameWindow();// 게임창
 	Join join = new Join();				// 회원가입창
+	
 	MakeRoom makeR = new MakeRoom();	// 방만들기창
+	
 	String id;
     Socket s;
     BufferedReader in;// 서버에서 값을 읽는다
     OutputStream out; // 서버로 요청값을 보낸다
+    
     
 	public ClientStart()
 	{

@@ -7,12 +7,12 @@ public class GetProfile {
 
 	public static void main(String[] args) throws IOException, SQLException {
 		
-		ServerSocket server=new ServerSocket(1111);
+		GameServer getImage=new GameServer();//서버 소켓 가져옴
+		// soket 수정해야됨
 		
-		Socket s=server.accept();
-		System.out.println("소켓"+s+"에 연결됨");
+
 		
-		InputStream input=s.getInputStream();
+		InputStream input=getImage.s.getInputStream();
 		BufferedReader bf=new BufferedReader(new InputStreamReader(input));
 		
 		String fileName=bf.readLine();
@@ -30,8 +30,6 @@ public class GetProfile {
 		bf.close();
 		input.close();
 		out.close();
-		s.close();
-		server.close();
 		
 		DB test=new DB(fileName,"C:/test");
 		test.runDB();
