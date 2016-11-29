@@ -14,6 +14,8 @@ public class Profile extends JFrame implements ActionListener {
 	TextField tf;
 	String directory="",file="";
 	
+	ClientStart image=new ClientStart();//클라이언트  소켓 가져옴
+	
 	
 	public Profile() throws Exception{
 		b1=new Button("프로필 사진 선택");
@@ -42,13 +44,13 @@ public class Profile extends JFrame implements ActionListener {
 			}
 			else{
 				
-				BufferedWriter writer=new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));
+				BufferedWriter writer=new BufferedWriter(new OutputStreamWriter(image.s.getOutputStream()));
 				System.out.println("파일명 : "+file);
 				writer.write(file+"\n");
 				writer.flush();
 				
 				DataInputStream InputData=new DataInputStream(new FileInputStream(new File(tf.getText())));
-				DataOutputStream OutputData=new DataOutputStream(s.getOutputStream());
+				DataOutputStream OutputData=new DataOutputStream(image.s.getOutputStream());
 				
 				int b=0;
 				while((b=InputData.read())!=-1){

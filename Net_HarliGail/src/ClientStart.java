@@ -16,14 +16,10 @@ public class ClientStart extends JFrame implements ActionListener, Runnable{
 	Join join = new Join();				// 회원가입창
 	MakeRoom makeR = new MakeRoom();	// 방만들기창
 	
-<<<<<<< HEAD
-	//test
-=======
 	String id;
     Socket s;
     BufferedReader in;// 서버에서 값을 읽는다
     OutputStream out; // 서버로 요청값을 보낸다
->>>>>>> branch 'master' of https://github.com/Bejita123/Halli-Galli-Online
 	public ClientStart()
 	{
 		setLayout(card);				// BorderLayout
