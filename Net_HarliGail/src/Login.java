@@ -13,7 +13,7 @@ public class Login extends JPanel{
 	
 	public Login()
 	{
-		bg = Toolkit.getDefaultToolkit().getImage("img/monkey_back3.jpg");
+		bg = Toolkit.getDefaultToolkit().getImage("img/bg.png");
 		label1 = new JLabel("ID");
 		label2 = new JLabel("PW");
 		
@@ -25,15 +25,15 @@ public class Login extends JPanel{
 		setLayout(null);
 		
 		JPanel p = new JPanel();
-		p.setBounds(200, 250, 220, 150);
+		p.setBounds(380, 450, 220, 150);
 		p.setLayout(null);
 		
-		label1.setBounds(10,15,30,30);
-		idF.setBounds(45, 15, 150, 30);
-		label2.setBounds(10,50,30,30);
-		pwdF.setBounds(45,50,150,30);
-		btJoin.setBounds(15,95,90,40);
-		btLogin.setBounds(120,95,90,40);
+		label1.setBounds(10,5,30,30);
+		idF.setBounds(45, 5, 150, 30);
+		label2.setBounds(10,60,30,30);
+		pwdF.setBounds(45,53,150,30);
+		btJoin.setBounds(15,110,90,40);
+		btLogin.setBounds(120,110,90,40);
 		
 		btJoin.setBorderPainted(false);
 		btJoin.setContentAreaFilled(false);
@@ -56,7 +56,6 @@ public class Login extends JPanel{
 	
 	protected void paintComponent(Graphics g)
 	{
-		
 		//this->JPanel에 배경 이미지 뿌림.
 		g.drawImage(bg,0,0,getWidth(),getHeight(),this);
 	}

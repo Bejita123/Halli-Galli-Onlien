@@ -31,8 +31,8 @@ public class ClientStart extends JFrame implements ActionListener, Runnable{
 		
 		add("LOGIN",login);				//로그인창
 		
-		setSize(800,600);				//윈도우창 크기 설정
-		setLocation(270,170);			//창 위치
+		setSize(1000,800);				//윈도우창 크기 설정
+		setLocation(170,50);			//창 위치
 		setVisible(true);				//보여지게
 		setResizable(false);			//윈도우 창 고정(늘릴 수 없음)
 		
