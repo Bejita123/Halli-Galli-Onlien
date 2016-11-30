@@ -1,3 +1,4 @@
+package server;
 
 public class Protocol {
 	/**/
@@ -13,6 +14,7 @@ public class Protocol {
 	public static final int NOTOVERLAP=201;
 	public static final int OVERLAP=202;
 	public static final int SUCCESSJOIN=203;
+	public static final int SENDINFORMATION=204;//ID와 PWD와 프로필 사진 보냄
 	//ID 중복
 	//ID 중복 X
 	//회원가입 완료

@@ -1,3 +1,4 @@
+package server;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -26,7 +27,7 @@ public class GameServer implements Runnable {
 	public GameServer() throws IOException, SQLException{
 		try
 		{ 
-			InetAddress addr = InetAddress.getByName("192.168.0.19");
+			InetAddress addr = InetAddress.getByName("localhost");
        
 			server=new ServerSocket(1111, 100 ,addr);		// port number , max_server connection, IP address	
 			System.out.println("소켓"+s+"에 연결됨");
@@ -100,14 +101,32 @@ class ClientThread extends Thread
 	{
 		while(true)			
 		{
+			
 			try
 			{
 				String msg=in.readLine();
-				System.out.println("Client=>"+msg);		//Client에서 보낸 메시지를 나타내줌
 				StringTokenizer st=new StringTokenizer(msg, "|");
 				int protocol=Integer.parseInt(st.nextToken());
 				switch(protocol)
 				{
+				case Protocol.SENDINFORMATION:{
+					
+					String id=st.nextToken();
+					String pwd=st.nextToken();
+					String fileName=st.nextToken();
+					File f = new File("C:/profile", fileName);
+
+					FileOutputStream out = new FileOutputStream(f);
+
+					int i = 0;
+					while ((i = in.read()) != -1) {
+						out.write((char) i);
+					}
+
+					System.out.println("받은 파일 C:/profile 경로에 저장됨!");
+					
+					DB insertDB = new DB(id,pwd,fileName);					
+				}
 					
 				}
 			}catch(Exception ex)

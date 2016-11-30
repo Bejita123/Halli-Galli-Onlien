@@ -1,3 +1,4 @@
+package client;
 import java.awt.*;
 import javax.swing.*;
 
@@ -11,7 +12,7 @@ import java.util.StringTokenizer;
 
 public class ClientStart extends JFrame implements ActionListener, Runnable{
 
-	String serverIp = "192.168.0.19"; // server Ip addr
+	String serverIp = "localhost"; // server Ip addr
 	CardLayout card = new CardLayout();	// 창 전환을 위해 필요합니다!
 	Loading load = new Loading();		// 로딩창
 	Login login = new Login();			// 로그인창
@@ -22,7 +23,7 @@ public class ClientStart extends JFrame implements ActionListener, Runnable{
 	MakeRoom makeR = new MakeRoom();	// 방만들기창
 	
 	String id;
-    Socket s;
+    static Socket s;
     BufferedReader in;// 서버에서 값을 읽는다
     OutputStream out; // 서버로 요청값을 보낸다
     
