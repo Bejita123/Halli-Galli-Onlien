@@ -20,9 +20,6 @@ public class Join extends JFrame implements ActionListener {
 	JButton b1, b2, b3, b4;
 	MyPanel panel;
 
-
-	
-	
 	ImageIcon joinButton = new ImageIcon("img/JoinButton.png");
 	ImageIcon backButton = new ImageIcon("img/BackButton.png");
 
