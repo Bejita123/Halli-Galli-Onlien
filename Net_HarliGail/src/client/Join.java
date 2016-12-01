@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 
 import client.ClientStart;
-
+import client.ClientStart;
 public class Join extends JFrame implements ActionListener {
 
 	String id, pwd;
@@ -115,13 +115,14 @@ public class Join extends JFrame implements ActionListener {
 		} else if (b3 == e.getSource()) {
 			System.out.println("ID중복체크");
 			id = idF.getText();			
+			BufferedWriter writer;
 			try {
-				ClientStart.id_send(id);
-			} catch (IOException e1) {
+				writer = new BufferedWriter(new OutputStreamWriter(ClientStart.s.getOutputStream()));
+				writer.write(Protocol.IDCHECK+"|"+id);	
+			} catch (IOException e2) {
 				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-			
+				e2.printStackTrace();
+			}				
 			
 		}
 

@@ -430,12 +430,5 @@ public class ClientStart  extends JFrame implements ActionListener, Runnable {
 			validate();
 		}
 	}
-	public static void id_send(String id) throws IOException{
-		
-		BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));	
-		
-		writer.write(Protocol.IDCHECK+"|"+id);	
-		
-	}
 
 }

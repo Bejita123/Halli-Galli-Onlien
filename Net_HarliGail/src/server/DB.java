@@ -92,7 +92,7 @@ public class DB {
 				String g_id=null;
 				g_id=result.getString("ID");//테이블에서 값 받아오기	
 				if(g_id!=null)
-					return -1;
+					return 1;
 		
 				
 			}
@@ -109,7 +109,7 @@ public class DB {
 			if(result!=null)
 				result.close();
 		}
-		return 1;			
+		return -1;			
 		
 	}
 
